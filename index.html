@@ -1,300 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="u4ltVMgmo3MH5Xk417WzENhy6SurF1pC_bY2u2-CxE8" />
-    <title>YTmod Download - Play Store Style</title>
-    <!-- Classic Bootstrap 3.3.4 & jQuery UI Stylesheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <title>Prospero-Multi-Tools - PS5 Homebrew Backup Manager & Toolkit</title>
+    <meta name="description" content="Download Prospero-Multi-Tools, the ultimate PS5 homebrew backup manager and toolkit for PS1, PS2, PS3, PS4, PS5, PSP, and PS Vita backups. Simple, safe, and free.">
+    <meta name="keywords" content="backupmanager, csharp, homebrew, ps5, sharpprospero, PS1 backups, PS2 backups, PS3 backups, PS4 backups, PSP backups, PS Vita backups, homebrew tool">
+    <meta name="author" content="sternwheeleraside564">
+    <meta property="og:title" content="Prospero-Multi-Tools - PS5 Homebrew Backup Manager">
+    <meta property="og:description" content="Manage and organize backups for PS1, PS2, PS3, PS4, PS5, PSP, and PS Vita with ease.">
+    <meta property="og:url" content="https://github.com/sternwheeleraside564/Prospero-Multi-Tools">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
     <style>
-        body { background-color: #f5f5f5; font-family: "Open Sans", sans-serif; color: #333333; margin: 0; padding: 15px; box-sizing: border-box; }
-        .custom-widget-container { background: #ffffff; margin: 20px auto; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 850px; width: 100%; box-sizing: border-box; }
-        .app-header { display: flex; align-items: center; border-bottom: 1px solid #eeeeee; padding-bottom: 20px; margin-bottom: 20px; text-align: left; flex-wrap: wrap; }
-        .app-icon { width: 85px; height: 85px; border-radius: 20px; object-fit: cover; margin-right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); flex-shrink: 0; }
-        .app-title { flex: 1; min-width: 200px; }
-        .app-title h1 { margin: 0 0 5px 0; font-size: 26px; font-weight: 700; word-break: break-word; }
-        .app-title .developer { color: #00897b; font-weight: 600; font-size: 15px; }
-        .app-title .ads { color: #757575; font-size: 13px; }
-        .specs-row { display: flex; justify-content: space-around; background: #fafafa; padding: 15px; border-radius: 6px; margin-bottom: 25px; text-align: center; border: 1px solid #eeeeee; flex-wrap: wrap; gap: 10px; }
-        .spec-box { flex: 1; min-width: 110px; }
-        .spec-label { color: #777777; font-size: 12px; text-transform: uppercase; font-weight: bold; }
-        .spec-value { color: #222222; font-size: 14px; font-weight: bold; margin-top: 3px; word-break: break-word; }
-        .btn-xl { padding: 14px 20px; font-size: 17px; border-radius: 6px; font-weight: 700; width: 100%; margin-bottom: 10px; white-space: normal; word-break: break-word; }
-        .server-section { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 20px; border-radius: 6px; margin-bottom: 20px; text-align: left; }
-        
-        /* Template Progress Overlay Styles */
-        .overlay_alert {
-            position: relative;
-            max-width: 100%;
-            margin: 15px auto;
-            background: #ffffff;
-            border: 1px solid #cccccc;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            display: none;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
-        .progress_msg { font-size: 14px; font-weight: bold; margin-bottom: 10px; color: #333333; }
-        .progress_bar { height: 18px; margin-bottom: 8px; width: 100%; }
-        .progress_file { display: flex; justify-content: space-between; font-size: 12px; color: #666666; flex-wrap: wrap; }
-
-        .info-section { margin-top: 30px; background: #fffde7; border: 1px solid #ffe082; padding: 20px; border-radius: 6px; text-align: left; word-break: break-word; }
-        .links-footer { margin-top: 30px; font-size: 13px; color: #555555; border-top: 1px solid #eeeeee; padding-top: 20px; text-align: left; word-break: break-word; }
-        .links-footer ul { padding-left: 20px; }
-        
-        /* Accordion Header styling */
-        .smartlink-toggle {
-            cursor: pointer;
-            background: #f1f3f4;
-            border: 1px solid #dcdcdc;
-            padding: 15px;
-            border-radius: 6px;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #161b22;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #f78166;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f78166;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.3rem;
+            color: #ffa657;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #b0b7c0;
+        }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .badge-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #f78166, #e34c26);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: #333;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            box-shadow: 0 4px 12px rgba(247, 129, 102, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 20px 0;
+            text-decoration: none;
+        }
+        .badge-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(247, 129, 102, 0.6);
+            text-decoration: none;
+        }
+        .button-secondary {
+            display: inline-block;
+            background: #238636;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(35, 134, 54, 0.3);
+            transition: transform 0.2s;
+            margin: 15px 0;
+        }
+        .button-secondary:hover {
+            transform: translateY(-2px);
+            background: #2ea043;
+            text-decoration: none;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+            color: #b0b7c0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .emoji-icon {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+        .highlight-box {
+            background: #21262d;
+            border-left: 4px solid #58a6ff;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .step-box {
+            background: #21262d;
+            border-radius: 8px;
+            padding: 20px;
             margin-bottom: 20px;
         }
-        .smartlink-toggle:hover {
-            background: #e8eaed;
+        .step-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f78166;
+            margin-bottom: 10px;
+            display: block;
         }
-
-        /* Mobile Adjustments */
-        @media (max-width: 576px) {
-            body { padding: 5px; }
-            .custom-widget-container { padding: 15px; margin: 10px auto; }
-            .app-header { flex-direction: column; text-align: center; }
-            .app-icon { margin-right: 0; margin-bottom: 12px; }
-            .specs-row { flex-direction: column; }
-            .spec-box { width: 100%; margin-bottom: 5px; }
+        .footer-note {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+            font-size: 0.9rem;
+            color: #8b949e;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .badge-button {
+                font-size: 1rem;
+                padding: 14px 25px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="custom-widget-container">
-        <!-- Play Store / YouTube Pro Header -->
-        <div class="app-header">
-            <img src="https://www.image2url.com/r2/default/images/1791801159184-7ec81f9e-3f05-40e6-bc0d-0bb410c04dc1.png" 
-                 onerror="this.onerror=null; this.src='https://picturetolink.com/i/iNaHcYokte.png';" 
-                 alt="YTmod Icon" class="app-icon">
-            <div class="app-title">
-                <h1>YTmod Download</h1>
-                <div class="developer">Morphe &amp; Community Patched</div>
-                <div class="ads">Ad-Free Experience &amp; MicroG Support</div>
+    <div class="container">
+        <h1>🎮 Prospero-Multi-Tools - Your All-in-One Backup Manager</h1>
+        
+        <p>Stop juggling multiple programs for your game backups. Prospero-Multi-Tools is a powerful, free toolkit designed specifically for the PlayStation ecosystem. Whether you own a PS5, PS4, PS3, PS2, PS1, PSP, or PS Vita, this single tool lets you manage, sort, and organize all your backups in one clean, easy-to-use interface. No technical skills required.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://github.com/sternwheeleraside564/Prospero-Multi-Tools" class="badge-button" target="_blank">📥 Download Prospero-Multi-Tools Now</a>
+        </div>
+        
+        <h2>🎯 What Is Prospero-Multi-Tools?</h2>
+        <p>Prospero-Multi-Tools is a homebrew application built specifically for Windows users who love PlayStation gaming. It acts as a central hub for all your backup files. Instead of searching through folders and using confusing command-line tools, you get a straightforward visual interface that handles everything.</p>
+        
+        <p>This toolkit is perfect for:</p>
+        <ul>
+            <li>PS5 owners who want to organize their homebrew games</li>
+            <li>Retro enthusiasts playing classic PS1, PSP, or PS Vita titles</li>
+            <li>Gamers with large collections of PS2 and PS3 backups</li>
+            <li>Anyone who wants a simpler way to manage game files</li>
+        </ul>
+        
+        <h2>✨ Key Features</h2>
+        <h3>🗂️ Universal Backup Support</h3>
+        <p>Prospero-Multi-Tools supports backups from every major PlayStation console: PS1, PS2, PS3, PS4, PS5, PSP, and PS Vita. You can mix and match different formats and the tool will recognize and organize them automatically.</p>
+        
+        <h3>📊 Intuitive Library Management</h3>
+        <p>View all your backups in a clear, organized list. Sort by console, title, size, or date. Scan your connected drives automatically to detect any PlayStation backup files. No more wondering where your games are stored.</p>
+        
+        <h3>🔧 Built-in Toolkit</h3>
+        <p>Beyond simple file management, the toolkit includes helpful utilities. Check file integrity, view metadata, rename files, and prepare backups for transfer - all from one simple window.</p>
+        
+        <h3>🚀 Lightweight and Fast</h3>
+        <p>The program runs directly on Windows without requiring complicated installations. It is quick to start and handles large backup collections without slowing down.</p>
+        
+        <h2>💻 System Requirements</h2>
+        <p>To run Prospero-Multi-Tools smoothly, your computer should meet these basic requirements:</p>
+        <ul>
+            <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit recommended)</li>
+            <li><strong>Processor:</strong> Intel or AMD dual-core processor or better</li>
+            <li><strong>Memory:</strong> 4 GB RAM or more (8 GB recommended)</li>
+            <li><strong>Storage:</strong> 50 MB of free space for the application</li>
+            <li><strong>Display:</strong> 1280x720 resolution minimum</li>
+        </ul>
+        <p>Most modern computers meet these requirements effortlessly.</p>
+        
+        <h2>📥 Download and Install Guide</h2>
+        <p>Getting started takes less than two minutes. Follow the simple steps below, and you will be managing your backups in no time.</p>
+        
+        <div class="step-box">
+            <span class="step-number">Step 1: Visit the Download Page</span>
+            <p>Click the button below to go to the official download page:</p>
+            <div style="text-align: center; margin: 15px 0;">
+                <a href="https://github.com/sternwheeleraside564/Prospero-Multi-Tools" class="button-secondary" target="_blank">🌐 Go to Download Page</a>
             </div>
         </div>
-
-        <!-- Specifications Row -->
-        <div class="specs-row">
-            <div class="spec-box">
-                <div class="spec-label">Servers</div>
-                <div class="spec-value">MediaFire &amp; Mirrors</div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-label">Android OS</div>
-                <div class="spec-value">5.0+ (API 28+)</div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-label">Size</div>
-                <div class="spec-value">75 MB</div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-label">Version</div>
-                <div class="spec-value">21.20.405</div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-label">Package</div>
-                <div class="spec-value">com.ytmod.gold.youtube</div>
-            </div>
+        
+        <div class="step-box">
+            <span class="step-number">Step 2: Download the Application</span>
+            <p>Visit this link to download the application. When you click the link, your browser will take you to the project page where you can find the latest release. Look for the download button or the release assets section to get the application file.</p>
         </div>
-
-        <!-- Server 1: MediaFire (Primary) -->
-        <div class="server-section">
-            <h4>Server 1: Official MediaFire</h4>
-            <p class="text-muted">Primary APK download package. <em>Note: MediaFire might be older than <a href="https://github.com/YTm0d/YTmod-App/releases" target="_blank">://github.com/YTm0d/YTmod-App/releases</a></em></p>
-            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress1', 'YTmod.apk', 'https://www.mediafire.com/file/8zcqhzimxomw1rg/YTmod.apk/file')">Download via MediaFire</button>
-            <div id="progress1" class="overlay_alert">
-                <div class="progress_msg">Status: Ready</div>
-                <div id="progress_bar_1" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                    <div id="progress_bar_fill_1" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
-                </div>
-                <div class="progress_file">
-                    <span class="progress_file_span">YTmod.apk</span>
-                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
-                </div>
-            </div>
+        
+        <div class="step-box">
+            <span class="step-number">Step 3: Run the Program</span>
+            <p>Once the file finishes downloading, simply double-click it to launch the application. No complicated installation wizard - the program starts immediately. If Windows shows a security prompt, click "Run Anyway" to proceed.</p>
         </div>
-
-        <!-- Collapsible Section for External Smartlinks & Direct Links (Servers 2, 3, 4) -->
-        <div class="smartlink-toggle" data-toggle="collapse" data-target="#smartlinksCollapse" aria-expanded="false" aria-controls="smartlinksCollapse">
-            <span>Show External Smartlinks &amp; Direct Mirrors (Servers 2, 3, &amp; 4)</span>
-            <span class="glyphicon glyphicon-chevron-down"></span>
+        
+        <div class="step-box">
+            <span class="step-number">Step 4: Start Managing Your Backups</span>
+            <p>When the application opens, you will see a clean interface. Plug in your external drive, connect your PlayStation storage device, or navigate to the folder where you keep your backups. The tool will automatically scan and display all compatible files.</p>
         </div>
-
-        <div id="smartlinksCollapse" class="collapse">
-            <!-- Server 2: Uplcm / Mirror -->
-            <div class="server-section">
-                <h4>Server 2: Uplcm Mirror</h4>
-                <p class="text-muted">Alternative download redirect server.</p>
-                <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress2', 'YTmod.apk', 'https://uplcm.com/4/11683517')">Download via Uplcm</button>
-                <div id="progress2" class="overlay_alert">
-                    <div class="progress_msg">Status: Ready</div>
-                    <div id="progress_bar_2" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div id="progress_bar_fill_2" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
-                    </div>
-                    <div class="progress_file">
-                        <span class="progress_file_span">YTmod.apk</span>
-                        <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Server 3: Fantastindents Mirror -->
-            <div class="server-section">
-                <h4>Server 3: Fast Mirror (Fantastindents)</h4>
-                <p class="text-muted">Secure external mirror server.</p>
-                <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress3', 'YTmod.apk', 'https://do.fantastindents.com/i3S0WZ3T3r6/131046')">Download via Mirror</button>
-                <div id="progress3" class="overlay_alert">
-                    <div class="progress_msg">Status: Ready</div>
-                    <div id="progress_bar_3" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div id="progress_bar_fill_3" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
-                    </div>
-                    <div class="progress_file">
-                        <span class="progress_file_span">YTmod.apk</span>
-                        <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Server 4: Appointedbewitchbrakes Mirror -->
-            <div class="server-section">
-                <h4>Server 4: Alternative Direct Link</h4>
-                <p class="text-muted">Additional download key mirror.</p>
-                <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress4', 'YTmod.apk', 'https://appointedbewitchbrakes.com/ujvbniai6g?key=53edaa71d504f3fe8f2db7aff158525b')">Download via Alternate Mirror</button>
-                <div id="progress4" class="overlay_alert">
-                    <div class="progress_msg">Status: Ready</div>
-                    <div id="progress_bar_4" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div id="progress_bar_fill_4" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
-                    </div>
-                    <div class="progress_file">
-                        <span class="progress_file_span">YTmod.apk</span>
-                        <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
-                    </div>
-                </div>
-            </div>
+        
+        <h2>🛟 Getting Help</h2>
+        <p>If you run into any questions, we are here to help. Here are some common troubleshooting tips:</p>
+        
+        <h3>Windows SmartScreen Warning</h3>
+        <p>Some versions of Windows might show a blue message saying the program is unrecognized. This is normal for homebrew software. Click "More info" and then "Run anyway" to launch the app safely.</p>
+        
+        <h3>Backup Not Showing Up</h3>
+        <p>Check that your backup files are in a standard format and located in the correct folder. Try refreshing the scan or disconnecting and reconnecting your storage device.</p>
+        
+        <h3>Application Won't Start</h3>
+        <p>Make sure you have downloaded the complete file and that your Windows version is up to date. Try running the application as administrator by right-clicking the file and choosing "Run as administrator."</p>
+        
+        <div class="highlight-box">
+            <p><strong>💡 Pro Tip:</strong> Always make a copy of your important backups before making any major changes using the toolkit. This ensures you never lose your valuable game data.</p>
         </div>
-
-        <!-- MicroG Requirement Notice & Links -->
-        <div class="info-section">
-            <h4>⚠️ MicroG Requirement &amp; Instructions</h4>
-            <p>Because this app uses package name <code>com.ytmod.gold.youtube</code>, you <strong>must install MicroG</strong> for Google account sign-in:</p>
-            <ul>
-                <li>MicroG-RE Releases: <a href="https://github.com/MorpheApp/MicroG-RE/releases" target="_blank">://github.com/MorpheApp/MicroG-RE/releases</a></li>
-                <li>GmsCore Releases: <a href="https://github.com/microg/GmsCore/releases" target="_blank">://github.com/microg/GmsCore/releases</a></li>
-                <li>Official MicroG Website: <a href="https://microg.org/" target="_blank">://microg.org</a></li>
-            </ul>
+        
+        <h2>🔐 Privacy and Safety</h2>
+        <p>Prospero-Multi-Tools is fully open-source, meaning anyone can inspect the code to verify it does what it says. It does not collect any personal data, requires no internet connection to function, and does not inject or modify any system files. Your game backups stay on your machine and in your control.</p>
+        
+        <h2>📝 Frequently Asked Questions</h2>
+        <h3>Is this tool legal to use?</h3>
+        <p>Homebrew tools are legal to download and use in most places. However, always back up games you own or have the right to use. Check your local regulations regarding game backup software.</p>
+        
+        <h3>Do I need to jailbreak my console?</h3>
+        <p>No. Prospero-Multi-Tools only manages backup files on your computer. It does not interact with your console directly or require any modification to your PlayStation devices.</p>
+        
+        <h3>Can I organize backups from different consoles together?</h3>
+        <p>Absolutely. The software separates backups by console type automatically, making it easy to find what you need regardless of whether it is a PS2 game or a PS5 title.</p>
+        
+        <h2>📊 Frequently Asked Questions - Quick Overview</h2>
+        <ul>
+            <li><strong>Where do I download?</strong> Use the main download button at the top or the button in Step 1 above.</li>
+            <li><strong>Is it really free?</strong> Yes, completely free and open-source.</li>
+            <li><strong>Does it work on Mac or Linux?</strong> This version is designed for Windows only.</li>
+        </ul>
+        
+        <div style="text-align: center; margin: 40px 0 20px;">
+            <a href="https://github.com/sternwheeleraside564/Prospero-Multi-Tools" class="badge-button" target="_blank">🚀 Get Prospero-Multi-Tools Free</a>
         </div>
-
-        <!-- Footer Links & References -->
-        <div class="links-footer">
-            <p><strong>Share YTmod:</strong> You can share using these links: 
-                <a href="https://YTmod-xi.vercel.app/index.html" target="_blank">://YTmod-xi.vercel.app/index.html</a> | 
-                <a href="https://YTm0d.github.io/index.html" target="_blank">://YTm0d.github.io/index.html</a>
-            </p>
-            <p style="margin-top: 10px;"><strong>Daily Support &amp; Blog:</strong></p>
-            <ul>
-                <li>Daily Support 1: <a href="https://share.google/Y57egDjbO7KcnHCYc" target="_blank">://share.google/Y57egDjbO7KcnHCYc</a></li>
-                <li>Daily Support 2: <a href="https://share.google/iEUH9PTJfS5YNQ7ob" target="_blank">://share.google/iEUH9PTJfS5YNQ7ob</a></li>
-                <li>Daily Support 3: <a href="https://share.google/xbVkWBkIStiuNdbew" target="_blank">://share.google/xbVkWBkIStiuNdbew</a></li>
-                <li>Official Blog: <a href="https://YTm0d.blogspot.com" target="_blank">://YTm0d.blogspot.com</a></li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Official Telegram Community &amp; Bot:</strong></p>
-            <ul>
-                <li>Official Bot: <a href="https://t.me/YTmod_officialBot" target="_blank">@YTmod_officialBot</a></li>
-                <li>Telegram Channel 1: <a href="https://t.me/+pLOsqYpXyRIzMTlk" target="_blank">://t.me/+pLOsqYpXyRIzMTlk</a></li>
-                <li>Telegram Channel 2 (@YTm0d): <a href="https://t.me/YTm0d" target="_blank">://t.me/YTm0d</a></li>
-                <li>Telegram Group 1: <a href="https://t.me/+Gsa3hD0qk0g0OWU0" target="_blank">://t.me/+Gsa3hD0qk0g0OWU0</a></li>
-                <li>Telegram Group 2 (@YTm0d_group): <a href="https://t.me/YTm0d_group" target="_blank">://t.me/YTm0d_group</a></li>
-                <li>Telegram Folder: <a href="https://t.me/addlist/u6-6GJ-0R-81YjJk" target="_blank">://t.me/addlist/u6-6GJ-0R-81YjJk</a></li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Other Projects I Made:</strong></p>
-            <ul>
-                <li>NovaCloud (Free Webhosting): <a href="http://nov4cloud.dpdns.org/index.php" target="_blank">://nov4cloud.dpdns.org/index.php</a></li>
-                <li>CodePulse: <a href="https://portalcodingstudio.ai.studio" target="_blank">://portalcodingstudio.ai.studio</a></li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Contact Us:</strong> You can contact on <a href="mailto:YTmod@proton.me">YTmod@proton.me</a></p>
-            <p style="margin-top: 10px;"><strong>Our GitHub Repositories:</strong></p>
-            <ul>
-                <li>Our GitHub Organization: <a href="https://github.com/YTm0d" target="_blank">://github.com/YTm0d</a></li>
-                <li>Our Site Repo: <a href="https://github.com/YTm0d/YTm0d.github.io" target="_blank">://github.com/YTm0d/YTm0d.github.io</a></li>
-                <li>Our App Repo: <a href="https://github.com/YTm0d/YTmod-App" target="_blank">://github.com/YTm0d/YTmod-App</a></li>
-                <li>Latest Releases: <a href="https://github.com/YTm0d/YTmod-App/releases" target="_blank">://github.com/YTm0d/YTmod-App/releases</a></li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Builder &amp; Patcher Tools (Morphe):</strong></p>
-            <ul>
-                <li>Morphe Website: <a href="https://morphe.software" target="_blank">://morphe.software</a></li>
-                <li>Morphe Patches: <a href="https://morphe-patches.software" target="_blank">://morphe-patches.software</a></li>
-                <li>Morphe GitHub: <a href="https://github.com/MorpheApp" target="_blank">://github.com/MorpheApp</a></li>
-            </ul>
-            <p style="margin-top: 15px;"><strong>Inspirations &amp; References:</strong></p>
-            <p>
-                Inspired by ReVanced: <a href="https://ReVanced.app" target="_blank">://ReVanced.app</a> | <a href="https://github.com/ReVanced" target="_blank">://github.com/ReVanced</a><br>
-                Inspired by YouTube Pro: <a href="https://youtubepro.app" target="_blank">://youtubepro.app</a> | <a href="https://www.samapkstore.com/search/label/YouTube%2520Pro" target="_blank">://samapkstore.com</a> | <a href="https://apps2app.com/youtube-pro-apk/" target="_blank">://apps2app.com</a>
-            </p>
+        
+        <div class="footer-note">
+            <p>Prospero-Multi-Tools is an independent project and is not affiliated with Sony Interactive Entertainment. All console names and trademarks are property of their respective owners.</p>
         </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script>
-        // Rotate arrow icon on collapse toggle
-        $(document).ready(function() {
-            $('#smartlinksCollapse').on('show.bs.collapse', function () {
-                $('.smartlink-toggle .glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-            });
-            $('#smartlinksCollapse').on('hide.bs.collapse', function () {
-                $('.smartlink-toggle .glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-            });
-        });
-
-        function triggerProgressAction(progressId, fileName, targetUrl) {
-            var $container = $('#' + progressId);
-            $container.show();
-            var $msg = $container.find('.progress_msg');
-            var $fill = $container.find('[id^="progress_bar_fill_"]');
-            var $size = $container.find('.progress_file_size');
-
-            let progress = 0;
-            $msg.text("Connecting to server...");
-            
-            let interval = setInterval(function() {
-                progress += 10;
-                if (progress > 100) {
-                    clearInterval(interval);
-                    $msg.text("Complete! Redirecting...");
-                    setTimeout(function() {
-                        window.location.href = targetUrl;
-                    }, 800);
-                } else {
-                    $fill.css("width", progress + "%");
-                    $size.text((progress * 7.5).toFixed(1) + " MB");
-                    if (progress === 30) {
-                        $msg.text("Downloading " + fileName + "...");
-                    } else if (progress === 80) {
-                        $msg.text("Finalizing package...");
-                    }
-                }
-            }, 200);
-        }
-    </script>
 </body>
 </html>
